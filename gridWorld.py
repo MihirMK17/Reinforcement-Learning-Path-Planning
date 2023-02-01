@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-@author: Tor Anderson
-"""
 
 import numpy as np
 import matplotlib.pyplot as plt
