@@ -1,4 +1,4 @@
-
+# Importing the necessary libaries and the files to use in the value iteration and policy iteration functions
 
 from gridWorld import *
 
@@ -11,16 +11,26 @@ import numpy as np
 import copy
 
 
-"""
-Implement your value iteration algorithm
-"""
 actions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
 def getIndexOf(states, neighbor):
+    """
+    This function returns the index of all the neighbor states
+    of the current states
+    """
     neighbor = list(neighbor)
     return states.tolist().index(neighbor)
 
 def getNeighbors(current_state, actions, n, m):
+    """
+    Description: Returns the neighbors of the current state and the associated actions
+                 required to move to those neighbor states
+    
+    Arguments: Current State: current_state (dtype: tuple)
+               Action set: actions (dtype: lsit of tuples)
+               No. of columns in the grid-world: n (dtype: int)
+               No. of rows in the grid-world: m (dtype: int)
+    """
     neighbors = []
     neighbor_acts = []
     for action in actions:
@@ -34,6 +44,14 @@ def getNeighbors(current_state, actions, n, m):
     return neighbors, neighbor_acts
 
 def getRewards(cost, gridname, states):
+    """
+    Description: Function returns reward associated with each state
+                 given the cost function and the grid type. 
+    
+    Arguments: Cost function: cost or bridge (dtype: string)
+               Gridname: gridname (dtype: string)
+               List of states: states (dtype: list)
+    """
     stateRewards = []
     for s in states:
         if cost == 'cost':
@@ -46,6 +64,17 @@ def getRewards(cost, gridname, states):
     return stateRewards
 
 def getProb(current_state, current_policy, states, eta, actions, gridname):
+    """
+    Description: Returns a probability matrix corresponding to each state transition,
+                 policy and current state
+                 
+    Arguments: Current state: current_state (dtype: tuple)
+               Policy: current_policy (dtype: tuple)
+               List of all states: states (dtype: list)
+               Environment uncertainty: eta (dtype: float)
+               Action set: actions (dtype: list of tuples)
+               Gridname: "gridname" (dtype: string)
+    """
     if gridname=='small':
         n, m, O, START, WINSTATE, LOSESTATE = smallGrid()
     elif gridname=='medium':
@@ -96,12 +125,16 @@ def getProb(current_state, current_policy, states, eta, actions, gridname):
 
 def valueIteration(gamma, cost, eta, gridname):
     """
-    Implement value iteration with a discount factor gamma and 
-    the pre-defined cost functions in this assignment. It is passed as a
-    string argument above. 
-    Output:
-    values: Numpy array of (n,m) dimensions
-    policy: Numpy array of (n,m) dimensions
+    Description: Implements value iteration with a discount factor gamma and 
+                 the pre-defined cost functions.
+      
+    Arguments: Discount factor: gamma (dtype: float)
+               Cost function: cost (dtype: string)
+               Environment Uncertainty: eta (dtype: float)
+               Gridname: gridname (dtype: string)
+               
+    Output: values: Numpy array of (n,m) dimensions
+            policy: Numpy array of (n,m) dimensions
     """
     # Use small and medium grid for your code submission
     # cost types: {'cost', 'bridge'}
@@ -191,17 +224,19 @@ def valueIteration(gamma, cost, eta, gridname):
     return values, policy, iterations
 
 
-"""
-Implement your policy iteration algorithm
-"""
 
 def policyIteration(gamma,cost,eta,gridname):
     """
-    (Offline) Policy iteration with a discount factor gamma and 
-    pre-defined cost functions. 
-    Output:
-    values: Numpy array of (n,m) dimensions
-    policy: Numpy array of (n,m) dimensions
+    Description: Implements policy iteration with a discount factor gamma and 
+                 the pre-defined cost functions.
+      
+    Arguments: Discount factor: gamma (dtype: float)
+               Cost function: cost (dtype: string)
+               Environment Uncertainty: eta (dtype: float)
+               Gridname: gridname (dtype: string)
+               
+    Output: values: Numpy array of (n,m) dimensions
+            policy: Numpy array of (n,m) dimensions
     """
     # Use small and medium grid for your code submission
     # cost types: {'cost', 'bridge'}
@@ -288,10 +323,13 @@ def policyIteration(gamma,cost,eta,gridname):
     values = np.fliplr(np.flipud(values.reshape(m, n)).T)
     return values, policy, iterations
 
-def optimalValues(question):
+def optimalValues(test):
     """
-    Please input your values of gamma and eta
-    for each assignment problem here.
+    Description: Function can be used to testing out different environment
+                 conditions and discount factors to visualize the differnt 
+                 output paths
+    
+    Arguments: Testing type: test (dtype: string)
     """
     if question=='a':
         gamma=0.9
@@ -305,19 +343,19 @@ def optimalValues(question):
         gamma=0.6
         eta=0.38
         return gamma, eta
-    elif question=='d1':
+    elif question=='d':
         gamma=0.03
         eta=0
         return gamma, eta
-    elif question=='d2':
+    elif question=='e':
         gamma=0.2
         eta=0.05
         return gamma, eta
-    elif question=='d3':
+    elif question=='f':
         gamma=0.9
         eta=0.1
         return gamma, eta
-    elif question=='d4':
+    elif question=='g':
         gamma=0.9
         eta=0.4
 
@@ -448,7 +486,7 @@ if __name__ == '__main__':
     """
     # Case 4
     """
-    # gamma, eta = optimalValues('d4')
+    # gamma, eta = optimalValues('d')
     # cost = 'bridge'
     # values, policy, iterations = valueIteration(gamma, cost, eta, gridname)
     # print('The number of iterations for policyIteration algorithm to converge is: ', iterations)
