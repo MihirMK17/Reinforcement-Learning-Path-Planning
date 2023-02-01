@@ -1,11 +1,4 @@
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created Spring 2022
-
-@author: parth
-"""
 def testGrid():
    n, m = 7, 7
 
