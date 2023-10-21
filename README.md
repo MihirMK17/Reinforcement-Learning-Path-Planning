@@ -1,4 +1,4 @@
-# Reinforcement-Learning-
+# Reinforcement-Learning - Path Planning 
 This repository contains the python implementation of reinforcement learning algorithms 
 
 1. Value Iteration
