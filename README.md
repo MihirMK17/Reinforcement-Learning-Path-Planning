@@ -18,11 +18,20 @@ This repository contains the python implementation of reinforcement learning alg
 ## Demonstration & Figures: 
 In this repository, we've conducted several experiments to better understand the behavior and output of our algorithms. The details of these experiments, along with the figures representing their results, are provided below:
 ### (a) Policy Iteration on 'smallGrid'
-Using discount parameter \( \gamma \) and the cost function for the 'small' grid, how long do we need to apply policy evaluation and policy improvement steps for convergence with \( \gamma = 0.9 \) and \( \eta = 0.2 \)?
+Using discount parameter $\gamma$ and the cost function for the 'small' grid, how long do we need to apply policy evaluation and policy improvement steps for convergence with $\gamma$ = 0.9 and $\eta$ = 0.2?
 - Path Followed: ![Qa)_output_path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/fb6bcc47-117e-487d-9cfe-de8b438dd214)
 - Value Function: ![Qa)_output_values](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/1a336c5c-5a24-44ae-880c-07e59415f03c)
 - Optimum Policy: ![Qa)_output_policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/38e0baa7-2a4c-4b2d-b2d9-bd0fee9f827c)
 - Number of iteratons for policyIteration algorithm to converge: 4
+
+### (b) Value Iteration on 'smallGrid'
+Given the same grid and discount parameter, when do we achieve convergence error $\epsilon$ = 1e−3 with $\gamma = 0.9 and $\eta = 0.2? How does this compare with the results from (a)?
+- Path Followed: ![Qb)_output_path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/04baaff6-ea84-4074-8513-d6c4db5795a6)
+- Value Function: ![Qb)iterations_values3](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/1ec8601b-34b4-42e7-acb3-4fc599fe3a3d)
+- Optimum Policy: ![Qb)_output_policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/84735b59-d45e-4d84-a082-b526edb569ab)
+- Number of iterations for valueIteration algorithm to converge: 308
+
+
 
 
 
