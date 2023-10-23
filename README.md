@@ -1,8 +1,9 @@
 # Reinforcement-Learning - Path Planning 
 This repository contains the python implementation of reinforcement learning algorithms 
 
-1. Value Iteration
-2. Policy Iteration
+1. Value Iteration: An iterative algorithm that computes the optimal value function for each state until convergence. At each iteration, it calculates the expected utility of each state considering any possible action and the resulting next state. This method eventually outputs a policy that gives the best action to take for each state.
+2. Policy Iteration: This algorithm initializes with a random policy, then iteratively evaluates the policy and improves the policy until an optimal policy is achieved. This method comprises two primary steps - policy evaluation and policy improvement.
+
 
 ## Explanation of the files
 
@@ -14,5 +15,25 @@ This repository contains the python implementation of reinforcement learning alg
 7. `valueIteration.py`: Contains implementation of Value Iteration and Policy Iteration algorithms. Outputs a path from the specified intial state and goal state.
 8. `testGrid.py`: A sample grid for tesing new grid worlds. 
 
+## Demonstration & Figures: 
+In this repository, we've conducted several experiments to better understand the behavior and output of our algorithms. The details of these experiments, along with the figures representing their results, are provided below:
+### (a) Policy Iteration on 'smallGrid'
+Using discount parameter \( \gamma \) and the cost function for the 'small' grid, how long do we need to apply policy evaluation and policy improvement steps for convergence with \( \gamma = 0.9 \) and \( \eta = 0.2 \)?
+- Path Followed: ![Qa)_output_path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/fb6bcc47-117e-487d-9cfe-de8b438dd214)
+- Value Function: ![Qa)_output_values](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/1a336c5c-5a24-44ae-880c-07e59415f03c)
+- Optimum Policy: ![Qa)_output_policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/38e0baa7-2a4c-4b2d-b2d9-bd0fee9f827c)
+- Number of iteratons for policyIteration algorithm to converge: 4
 
-Note: All of the above files must be in the same directory/folder for the python files to work. 
+
+
+
+
+
+**Important**: Ensure all files are located within the same directory/folder for seamless execution.
+
+## Getting Started
+
+1. Clone this repository.
+2. Ensure all Python dependencies are installed.
+3. Execute the main script to visualize the grid world and computed path.
+4. Adjust the cost functions or grid world definitions to experiment with different paths.
