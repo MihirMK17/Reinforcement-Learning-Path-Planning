@@ -31,13 +31,46 @@ Given the same grid and discount parameter, when do we achieve convergence error
 - Optimum Policy: ![Qb)_output_policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/84735b59-d45e-4d84-a082-b526edb569ab)
 - Number of iterations for valueIteration algorithm to converge: 308
 
+### (c) Experimenting with `mediumGrid`
+Utilizing `mediumGrid` and adjusting the discount factor $\gamma$ and noise $\eta$, can our optimal policy go through cell (2,2)?
+#### $\gamma$ = 0.8 and $\eta$ = 0.4
+- Path Followed: ![0 8, 0 4, path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/c7fcaea5-2d7f-4ca0-b638-27ff82ea2da8)
+- Value Function: ![0 8, 0 4, values](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/b67ef9fe-5007-4f00-b8aa-66bf248cfe94)
+- Optimum Policy: ![0 8, 0 4, policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/11a3fe54-ef11-4f43-acb4-1983cd228bec)
+  
+#### $\gamma$ = 0.9 and $\eta$ = 0.2
+- Path Followed: ![0 9, 0 2, path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/198ad06b-94fe-4a5e-84e8-234dde946e4a)
+- Value Function: ![0 9, 0 2, values](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/473591bd-38c7-464e-948f-5360b39ccc17)
+- Optimum Policy: ![0 9, 0 2, policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/07338701-d896-4763-a987-4e7eebc70317)
+  
+#### $\gamma$ = 0.74 and $\eta$ = 0.38
+- Path Followed: ![0 74, 0 38, path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/b6c4c469-b251-4638-b7e3-4c67ec26b5ff)
+- Value Function: ![0 74, 0 38, values](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/b33bb490-7b10-475d-98f3-b7adeba7d670)
+- Optimum Policy: ![0 74, 0 38, policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/41c4ff92-c964-42a8-a81e-2d925daac878)
+  
+#### $\gamma$ = 0.6 and $\eta$ = 0.38
+- Path Followed: ![0 6, 0 38, path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/6eb9fce4-c7db-4ca8-b66a-e05b2481bb97)
+- Value Function: ![0 6, 0 38, values](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/f72f0da1-9cec-4e5a-b68a-7d2b27f23baf)
+- Optimum Policy: ![0 6, 0 38, policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/e3160217-3486-4e75-863a-45d4ab3fb87c)
 
+### (d) Path Planning on 'mediumGrid' with `getCostBridge`
+In a special scenario with the `mediumGrid` layout, what parameters for \( \gamma \) and \( \eta \) give rise to various optimal paths under differing conditions?
+#### $\gamma$ = 0.03 $\eta$ = 0
+- Path Followed: ![i) path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/f780cc4c-a5a7-4c44-9cb6-9f43db576fa8)
+- Optimum Policy: ![i) policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/13c6d85e-7e49-494e-a564-9df3546c3ec8)
 
+#### $\gamma$ = 0.02 $\eta$ = 0.05
+- Path Followed: ![ii) path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/bee645ad-2b5e-482a-b6bf-d8d816086d44)
+- Optimum Policy: ![ii) policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/05c36215-02eb-43a2-9f57-b3fa941bffb5)
 
+#### $\gamma$ = 0.9 $\eta$ = 0.1
+- Path Followed: ![iii) path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/807b2c42-451a-43eb-ac69-cfda5de6f638)
+- Optimum Policy: ![iii) policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/d0da9711-755a-43c6-92fd-6eef68223fd7)
 
-
-
-
+#### $\gamma$ = 0.9 $\eta$ = 0.4
+- Path Followed: ![iv) path](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/4f1d98c9-b454-4b8d-8f67-173ab3750ae3)
+- Optimum Policy: ![iv) policy](https://github.com/MihirMK17/Reinforcement-Learning-Path-Planning/assets/123691876/1334ad37-8855-47ff-a93c-d12dd281ec95)
+  
 **Important**: Ensure all files are located within the same directory/folder for seamless execution.
 
 ## Getting Started
